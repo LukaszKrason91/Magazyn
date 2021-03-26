@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    #url: jdbc:mysql://mysql:3306/microservices?serverTimezone=CET&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/warehouse?serverTimezone=CET&createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
