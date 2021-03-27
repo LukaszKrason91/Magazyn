@@ -1,5 +1,6 @@
 package com.example.Warehouse.model;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,21 +17,20 @@ public class Returns {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int returnId;
+    private int returnId;
     @Column
-    int returnQuantity;
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    Customers customerReturns;
+    @NotNull
+    private int returnQuantity;
 
     @ManyToOne
     @JoinColumn(name = "cart_id")
-    Cart carts;
-
+    private Cart carts;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    Product product;
+    private Product product;
+
+
 
 
 }

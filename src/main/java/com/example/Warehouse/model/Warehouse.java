@@ -1,5 +1,6 @@
 package com.example.Warehouse.model;
 
+import com.sun.istack.NotNull;
 import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,9 +18,10 @@ public class Warehouse {
     @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int warehouseId;
+    private int warehouseId;
     @Column
-    String WarehouseName;
+    @NotNull
+    private String WarehouseName;
     @OneToMany(mappedBy = "warehouse")
     private Set<Product> productsSet;
     @OneToMany(mappedBy = "warehouse")

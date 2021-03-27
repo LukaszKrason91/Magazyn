@@ -1,5 +1,6 @@
 package com.example.Warehouse.model;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,13 +17,14 @@ public class Customers {
     @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int customerId;
+    private int customerId;
     @Column
-    String customerName;
+    @NotNull
+    private String customerName;
     @OneToMany(mappedBy = "customer")
     private Set<Cart> cartSet;
     @OneToMany(mappedBy = "customerReturns")
-    private Set<Returns> returnsSet;
+    private Set<Users> usersSet;
 
 
 }

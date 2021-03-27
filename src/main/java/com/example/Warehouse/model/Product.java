@@ -1,5 +1,7 @@
 package com.example.Warehouse.model;
 
+import com.jayway.jsonpath.internal.function.numeric.Min;
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,29 +17,32 @@ public class Product {
     @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int productId;
+    private int productId;
     @Column
-    long productQuantity;
+    @NotNull
+    private long productQuantity;
     @Column
-    String productStatus;
+    @NotNull
+    private String productStatus;
     @Column
-    double productPrice;
+    @NotNull
+    private double productPrice;
     @Column
-    double productDiscount;
+    private double productDiscount;
     @Column
-    int ProductDiscountExist;
+    private int ProductDiscountExist;
     @Column
-    String productCol;
+    private String productCol;
 
     @OneToMany(mappedBy = "product")
     private Set<Returns> returnsSet;
 
     @ManyToOne
     @JoinColumn(name = "warehouse_id")
-    Warehouse warehouse;
+    private Warehouse warehouse;
     @ManyToOne
     @JoinColumn(name = "manufactures_id")
-    Manufactures manufactures;
+    private Manufactures manufactures;
     @ManyToMany(mappedBy = "productsInCart")
-    Set<Cart> cartWithProducts;
+    private Set<Cart> cartWithProducts;
 }

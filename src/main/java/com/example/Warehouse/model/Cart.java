@@ -1,8 +1,10 @@
 package com.example.Warehouse.model;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -16,23 +18,24 @@ public class Cart {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int cartId;
+    private int cartId;
     @Column
-    String cartName;
+    private String cartName;
     @Column
-    int orderedQuantity;
+    @NotNull
+    private int orderedQuantity;
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    Customers customer;
+    private Customers customer;
     @OneToMany(mappedBy = "carts")
     private Set<Returns> aReturnsSet;
     @ManyToOne
     @JoinColumn(name = "warehouse_id")
-    Warehouse warehouse;
+    private Warehouse warehouse;
     @ManyToMany
     @JoinTable(
             name = "cart_element",
             joinColumns = @JoinColumn(name = "cart_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
-    Set<Product> productsInCart;
+    private Set<Product> productsInCart;
 }

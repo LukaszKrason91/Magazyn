@@ -1,5 +1,6 @@
 package com.example.Warehouse.model;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,11 +17,12 @@ public class Role {
     @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int roleId;
+    private int roleId;
     @Column
-    String roleName;
+    @NotNull
+    private String roleName;
     @ManyToOne
     @JoinColumn(name = "users_id")
-    Users users;
+    private Users users;
 
 }
