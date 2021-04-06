@@ -1,4 +1,4 @@
-package com.example.Warehouse.model;
+package com.example.Warehouse.model1;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -12,16 +12,15 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "manufactures")
-public class Manufactures {
+@Table
+public class Manufacturer {
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int manufactureId;
+    private int manufacturerId;
     @Column
     @NotNull
     private String manufacturerName;
-    @OneToMany(mappedBy = "manufactures")
-    private Set<Product> productsSetOne;
+    @OneToMany(mappedBy = "manufacturer")
+    private Set<Product> productSet;
 
 }

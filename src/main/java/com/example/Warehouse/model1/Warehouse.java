@@ -1,7 +1,6 @@
-package com.example.Warehouse.model;
+package com.example.Warehouse.model1;
 
 import com.sun.istack.NotNull;
-import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,20 +10,17 @@ import java.util.Set;
 
 @Data
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "warehouse")
+@NoArgsConstructor
+@Table
 public class Warehouse {
-    @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int warehouseId;
     @Column
     @NotNull
-    private String WarehouseName;
-    @OneToMany(mappedBy = "warehouse")
-    private Set<Product> productsSet;
-    @OneToMany(mappedBy = "warehouse")
-    private Set<Cart> cartsSet;
+    private String warehouseName;
+    @OneToMany(mappedBy = "warehouses")
+    private Set<WarehouseHasProduct> warehouseHasProductSet;
 
 }

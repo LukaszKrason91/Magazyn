@@ -1,4 +1,4 @@
-package com.example.Warehouse.model;
+package com.example.Warehouse.model1;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -7,14 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
-
-@Data
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users")
+@Table
 public class Users {
-    @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
@@ -23,17 +21,16 @@ public class Users {
     private String userName;
     @Column
     @NotNull
+    private String userLastName;
+    @Column
+    @NotNull
+    private String login;
+    @Column
+    @NotNull
     private String userPassword;
-    @ManyToOne
-    @JoinColumn (name ="customer_id")
-    private  Customers customerReturns;
+    @OneToMany (mappedBy ="users2" )
+    private Set<Role> roleSet;
+    //roleId
 
-    @OneToMany(mappedBy = "users")
-    private Set<Role> rolesSet;
-    @ManyToMany
-    @JoinTable(name = "customers_returns",
-    joinColumns = @JoinColumn(name = "user_id"),
-    inverseJoinColumns = @JoinColumn(name = "return_id"))
-    private Set<Returns> returnsSet;
 
 }
