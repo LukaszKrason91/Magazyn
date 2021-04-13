@@ -18,7 +18,7 @@ public class Users {
     private int userId;
     @Column
     @NotNull
-    private String userName;
+    private String userFirstName;
     @Column
     @NotNull
     private String userLastName;
@@ -30,7 +30,5 @@ public class Users {
     private String userPassword;
     @OneToMany (mappedBy ="users2" )
     private Set<Role> roleSet;
-    //roleId
-
 
 }
