@@ -25,7 +25,8 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartDTO createCart(CartDTO cartDTO) {
-        return null;
+        cartRepository.save(modelMapper.map(cartDTO, Cart.class));
+        return cartDTO;
     }
 
     @Override

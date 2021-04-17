@@ -25,7 +25,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UsersDTO create(UsersDTO usersDTO) {
-        return null;
+        usersRepository.save(modelMapper.map(usersDTO, Users.class));
+        return usersDTO;
     }
 
     @Override

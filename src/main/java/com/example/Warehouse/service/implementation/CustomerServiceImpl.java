@@ -25,7 +25,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO createCustomer(CustomerDTO customerDTO) {
-        return null;
+        customerRepository.save(modelMapper.map(customerDTO, Customer.class));
+        return customerDTO;
     }
 
     @Override

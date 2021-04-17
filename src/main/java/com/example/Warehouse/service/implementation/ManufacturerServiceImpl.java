@@ -25,7 +25,8 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public ManufacturerDTO createManufacturer(ManufacturerDTO manufacturerDTO) {
-        return null;
+        manufacturerRepository.save(modelMapper.map(manufacturerDTO, Manufacturer.class));
+        return manufacturerDTO;
     }
 
     @Override

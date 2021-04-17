@@ -25,7 +25,8 @@ public class WarehouseServiceImpl implements WarehouseService {
 
     @Override
     public WarehouseDTO create(WarehouseDTO warehouseDTO) {
-        return null;
+        warehouseRepository.save(modelMapper.map(warehouseDTO, Warehouse.class));
+        return warehouseDTO;
     }
 
     @Override
