@@ -1,5 +1,6 @@
 package com.example.Warehouse.service.implementation;
 
+import com.example.Warehouse.exceptions.ManufacturerNotFoundException;
 import com.example.Warehouse.model.Manufacturer;
 import com.example.Warehouse.model.dto.ManufacturerDTO;
 import com.example.Warehouse.repositories.ManufacturerRepository;
@@ -36,7 +37,8 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public ManufacturerDTO findManufacturerById(int manufacturerId) {
-        return null;
+        return modelMapper.map(manufacturerRepository.findById(manufacturerId)
+                .orElseThrow(ManufacturerNotFoundException::new), ManufacturerDTO.class);
     }
 
     @Override

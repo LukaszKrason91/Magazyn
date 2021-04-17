@@ -1,5 +1,6 @@
 package com.example.Warehouse.service.implementation;
 
+import com.example.Warehouse.exceptions.CartNotFoundException;
 import com.example.Warehouse.model.Cart;
 import com.example.Warehouse.model.dto.CartDTO;
 import com.example.Warehouse.repositories.CartRepository;
@@ -36,7 +37,8 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartDTO findCartById(int cartId) {
-        return null;
+        return modelMapper.map(cartRepository.findById(cartId)
+                .orElseThrow(CartNotFoundException::new), CartDTO.class);
     }
 
     @Override

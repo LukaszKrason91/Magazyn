@@ -1,5 +1,6 @@
 package com.example.Warehouse.service.implementation;
 
+import com.example.Warehouse.exceptions.WarehouseNotFoundException;
 import com.example.Warehouse.model.Warehouse;
 import com.example.Warehouse.model.dto.WarehouseDTO;
 import com.example.Warehouse.repositories.WarehouseRepository;
@@ -36,7 +37,8 @@ public class WarehouseServiceImpl implements WarehouseService {
 
     @Override
     public WarehouseDTO findByWarehouseId(int warehouseId) {
-        return null;
+        return modelMapper.map(warehouseRepository.findById(warehouseId)
+                .orElseThrow(WarehouseNotFoundException::new), WarehouseDTO.class);
     }
 
     @Override

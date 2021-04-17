@@ -36,7 +36,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO findCustomerById(int customerId) {
-        return null;
+        return modelMapper.map(customerRepository.findById(customerId)
+                .orElseThrow(ClassCastException::new), CustomerDTO.class);
     }
 
     @Override

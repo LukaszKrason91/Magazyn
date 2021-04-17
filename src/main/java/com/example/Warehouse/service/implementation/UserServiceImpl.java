@@ -1,5 +1,6 @@
 package com.example.Warehouse.service.implementation;
 
+import com.example.Warehouse.exceptions.UserNotFoundException;
 import com.example.Warehouse.model.Users;
 import com.example.Warehouse.model.dto.UsersDTO;
 import com.example.Warehouse.repositories.UsersRepository;
@@ -41,7 +42,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UsersDTO findById(int userId) {
-        return null;
+        return modelMapper.map(usersRepository.findById(userId)
+                .orElseThrow(UserNotFoundException::new), UsersDTO.class);
     }
 
     @Override
