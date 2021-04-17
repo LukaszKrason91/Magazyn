@@ -31,7 +31,7 @@ public class WarehouseServiceImpl implements WarehouseService {
 
     @Override
     public void deleteWarehouse(int warehouseId) {
-
+        warehouseRepository.deleteById(warehouseId);
     }
 
     @Override

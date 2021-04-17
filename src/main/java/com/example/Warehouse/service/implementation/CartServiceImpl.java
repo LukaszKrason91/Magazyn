@@ -31,7 +31,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public void deleteCart(int cartId) {
-
+        cartRepository.deleteById(cartId);
     }
 
     @Override

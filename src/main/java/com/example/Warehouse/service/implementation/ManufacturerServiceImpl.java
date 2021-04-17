@@ -31,7 +31,7 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public void deleteManufacturer(int manufacturerId) {
-
+        manufacturerRepository.deleteById(manufacturerId);
     }
 
     @Override
