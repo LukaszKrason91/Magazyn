@@ -24,7 +24,7 @@ public class CustomerController {
         return customerService.findCustomerById(customerId);
     }
 
-    @PostMapping
+    @PutMapping
     public CustomerDTO create(@Valid @RequestBody CustomerDTO customerDTO) {
         return customerService.createCustomer(customerDTO);
     }

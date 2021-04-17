@@ -5,6 +5,7 @@ import com.example.Warehouse.services.UsersService;
 import com.example.Warehouse.services.implementations.UsersServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ public class UsersController {
     private UsersService usersService;
 
     @GetMapping("/users")
+    @ResponseStatus
     public List<UsersDTO> getAllUsers() {
         return usersService.findAllUsers();
     }
@@ -28,7 +30,7 @@ public class UsersController {
         return usersService.findById(userId);
     }
 
-    @PostMapping
+    @PutMapping
     public UsersDTO create(@Valid @RequestBody UsersDTO usersDTO) {
         return usersService.create(usersDTO);
     }

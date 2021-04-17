@@ -21,7 +21,6 @@ public class Product {
     @NotNull
     private String productName;
     @Column
-    @NotNull
     private double productPrice;
     @ManyToOne
     @JoinColumn(name = "manufacturer_id")

@@ -19,7 +19,6 @@ public class WarehouseHasProduct {
     @Column(name = "whp_id")
     private int whpId;
     @Column
-    @NotNull
     private int whpQuantity;
     @ManyToOne
     @JoinColumn (name = "product_id")

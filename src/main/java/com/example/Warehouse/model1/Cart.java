@@ -18,7 +18,6 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cartId;
     @Column
-    @NotNull
     private double totalPrice;
     @ManyToOne
     @JoinColumn(name = "customer_id")

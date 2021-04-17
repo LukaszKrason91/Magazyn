@@ -17,7 +17,6 @@ public class SingleProductForCart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int spfcId;
     @Column
-    @NotNull
     private int spfcQuantity;
     @ManyToOne
     @JoinColumn (name = "cart_id")
