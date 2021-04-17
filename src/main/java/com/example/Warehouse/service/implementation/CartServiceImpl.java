@@ -7,7 +7,6 @@ import com.example.Warehouse.service.CartService;
 import java.util.List;
 
 public class CartServiceImpl implements CartService {
-
     @Override
     public List<CartDTO> findAllCarts() {
         return null;
