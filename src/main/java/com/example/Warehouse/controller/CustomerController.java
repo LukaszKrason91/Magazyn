@@ -3,8 +3,8 @@ package com.example.Warehouse.controller;
 import com.example.Warehouse.model1.dto.CustomerDTO;
 import com.example.Warehouse.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -25,11 +25,13 @@ public class CustomerController {
     }
 
     @PutMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public CustomerDTO create(@Valid @RequestBody CustomerDTO customerDTO) {
         return customerService.createCustomer(customerDTO);
     }
 
-    @PostMapping("/{customerId}")
+    @PutMapping("/{customerId}")
+    @ResponseStatus
     public CustomerDTO update(@PathVariable int customerId, @RequestBody CustomerDTO customerDTO) {
         return customerService.update(customerId, customerDTO);
     }

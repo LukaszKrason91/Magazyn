@@ -2,14 +2,8 @@ package com.example.Warehouse.controller;
 
 import com.example.Warehouse.model1.dto.UsersDTO;
 import com.example.Warehouse.services.UsersService;
-import com.example.Warehouse.services.implementations.UsersServiceImpl;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
-
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -35,7 +29,7 @@ public class UsersController {
         return usersService.create(usersDTO);
     }
 
-    @PostMapping("/{userId}")
+    @PutMapping("/{userId}")
     public UsersDTO update(@PathVariable int userId, @RequestBody UsersDTO usersDTO) {
         return usersService.update(userId, usersDTO);
     }

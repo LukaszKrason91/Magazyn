@@ -1,11 +1,9 @@
 package com.example.Warehouse.controller;
 
-import com.example.Warehouse.model1.Cart;
 import com.example.Warehouse.model1.dto.CartDTO;
 import com.example.Warehouse.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
