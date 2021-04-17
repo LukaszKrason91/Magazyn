@@ -25,7 +25,7 @@ public class CartController {
         return cartService.findCartById(cartId);
     }
 
-    @PostMapping
+    @PutMapping
     public CartDTO createCart(@Valid @RequestBody CartDTO cartDTO) {
         return cartService.createCart(cartDTO);
     }
