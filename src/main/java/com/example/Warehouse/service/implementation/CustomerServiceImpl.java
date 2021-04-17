@@ -2,14 +2,25 @@ package com.example.Warehouse.service.implementation;
 
 import com.example.Warehouse.model.Customer;
 import com.example.Warehouse.model.dto.CustomerDTO;
+import com.example.Warehouse.repositories.CustomerRepository;
 import com.example.Warehouse.service.CustomerService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CustomerServiceImpl implements CustomerService {
+    @Autowired
+    private CustomerRepository customerRepository;
+    @Autowired
+    private ModelMapper modelMapper;
+
     @Override
     public List<CustomerDTO> findAllCustomers() {
-        return null;
+        return customerRepository.findAll().stream()
+                .map(customer -> modelMapper.map(customer, CustomerDTO.class))
+                .collect(Collectors.toList());
     }
 
     @Override
