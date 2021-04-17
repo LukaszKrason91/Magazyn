@@ -52,11 +52,22 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getCustomerEntity(int customerId) {
-        return null;
+        return customerRepository.findById(customerId)
+                .orElseThrow(ClassCastException::new);
     }
 
     @Override
     public CustomerDTO update(int customerId, CustomerDTO customerDTO) {
-        return null;
+        Customer customer = getCustomerEntity(customerId);
+        if (customerDTO.getCustomerName() != null) {
+            customer.setCustomerName(customerDTO.getCustomerName());
+        }
+        if (customerDTO.getCustomerAddress() != null) {
+            customer.setCustomerAddress(customerDTO.getCustomerAddress());
+        }
+        if (customerDTO.getCustomerEmail() != null){
+            customer.setCustomerEmail(customerDTO.getCustomerEmail());
+        }
+        return modelMapper.map(customerRepository.save(customer), CustomerDTO.class);
     }
 }
