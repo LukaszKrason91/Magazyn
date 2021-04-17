@@ -1,6 +1,5 @@
 package com.example.Warehouse.model1;
 
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,7 +22,7 @@ public class Cart {
     @JoinColumn(name = "customer_id")
     private Customer customer;
     @OneToMany(mappedBy = "cart")
-    private Set<ReturnedItems> returnedItemsSet;
+    private Set<Return> returnedItemsSet;
     @OneToMany (mappedBy = "cart1")
     private Set<SingleProductForCart> singleProductForCartSet;
 }
