@@ -24,6 +24,12 @@ public class UsersController {
         return usersService.findById(userId);
     }
 
+    @GetMapping ("/{login}")
+    public UsersDTO findByLogin(@PathVariable String login){return usersService.findByLogin(login);}
+
+    @GetMapping("/{userLastName}")
+    public UsersDTO findByUserLastName(@PathVariable String userLastName){return usersService.findByUserLastName(userLastName);}
+
     @PutMapping
     public UsersDTO create(@Valid @RequestBody UsersDTO usersDTO) {
         return usersService.create(usersDTO);

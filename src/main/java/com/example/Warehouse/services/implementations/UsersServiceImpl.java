@@ -65,13 +65,13 @@ public class UsersServiceImpl implements UsersService {
         return usersRepository.findById(userId).orElseThrow(UserNotFoundException::new);
     }
 
-//    @Override
-//    public UsersDTO findByLogin(String login) {
-//        return usersRepository.findByLogin(login);
-//    }
+    @Override
+    public UsersDTO findByLogin(String login) {
+        return usersRepository.findByLogin(login).map(users -> modelMapper.map(users,UsersDTO.class)).orElseThrow();
+    }
 
-//    @Override
-//    public UsersDTO findByLastName(String userLastName) {
-//        return usersRepository.findByLastName(userLastName);
-//    }
+    @Override
+    public UsersDTO findByUserLastName(String userLastName) {
+        return usersRepository.findByUserLastName(userLastName).map(users -> modelMapper.map(users,UsersDTO.class)).orElseThrow();
+    }
 }

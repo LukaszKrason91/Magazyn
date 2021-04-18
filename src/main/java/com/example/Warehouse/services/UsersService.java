@@ -18,9 +18,10 @@ public interface UsersService {
 
     Users getUserEntity(int userId);
 
-//    UsersDTO findByLogin (String login);
-//
-//    UsersDTO findByLastName(String userLastName);
+    UsersDTO findByLogin (String login);
+
+    UsersDTO findByUserLastName(String userLastName);
 
 
 }
+
