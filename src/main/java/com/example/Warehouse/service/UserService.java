@@ -17,4 +17,8 @@ public interface UserService {
     UsersDTO findById(int userId);
 
     Users getUserEntity(int userId);
+
+    UsersDTO findUserByFirstName(String userFirstName);
+
+    UsersDTO findUserByLasrName(String userLastName);
 }

@@ -15,4 +15,6 @@ public interface ManufacturerService {
     ManufacturerDTO findManufacturerById(int manufacturerId);
 
     Manufacturer getManufacturerEntity(int manufacturerId);
+
+    ManufacturerDTO findManufacturerByName(String manufacturerName);
 }

@@ -52,4 +52,11 @@ public class ProductServiceImpl implements ProductService {
     public Product getProductEntity(int productId) {
         return productRepository.findById(productId).orElseThrow(ProductNotFoundException::new);
     }
+
+    @Override
+    public ProductDTO findProductByName(String productName) {
+        return productRepository.findProductByName(productName)
+                .map(product -> modelMapper.map(product, ProductDTO.class))
+                .orElseThrow();
+    }
 }

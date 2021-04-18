@@ -17,4 +17,6 @@ public interface ProductService {
     ProductDTO updateProduct(int productId, ProductDTO productDTO);
 
     Product getProductEntity(int productId);
+
+    ProductDTO findProductByName(String productName);
 }

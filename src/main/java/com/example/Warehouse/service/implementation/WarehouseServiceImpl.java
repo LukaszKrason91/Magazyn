@@ -47,4 +47,11 @@ public class WarehouseServiceImpl implements WarehouseService {
     public Warehouse getWarehouseEntity(int warehouseId) {
         return warehouseRepository.findById(warehouseId).orElseThrow(WarehouseNotFoundException::new);
     }
+
+    @Override
+    public WarehouseDTO findWarehouseByName(String warehouseName) {
+        return warehouseRepository.findWarehouseByName(warehouseName)
+                .map(warehouse -> modelMapper.map(warehouse, WarehouseDTO.class))
+                .orElseThrow();
+    }
 }

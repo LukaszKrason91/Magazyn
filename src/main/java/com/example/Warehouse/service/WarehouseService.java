@@ -15,4 +15,6 @@ public interface WarehouseService {
     WarehouseDTO findByWarehouseId(int warehouseId);
 
     Warehouse getWarehouseEntity (int warehouseId);
+
+    WarehouseDTO findWarehouseByName(String warehouseName);
 }

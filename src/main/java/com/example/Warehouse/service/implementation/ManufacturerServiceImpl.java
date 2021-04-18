@@ -47,4 +47,11 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     public Manufacturer getManufacturerEntity(int manufacturerId) {
         return manufacturerRepository.findById(manufacturerId).orElseThrow(ManufacturerNotFoundException::new);
     }
+
+    @Override
+    public ManufacturerDTO findManufacturerByName(String manufacturerName) {
+        return manufacturerRepository.findManufacturerByName(manufacturerName)
+                .map(manufacturer -> modelMapper.map(manufacturer, ManufacturerDTO.class))
+                .orElseThrow();
+    }
 }
