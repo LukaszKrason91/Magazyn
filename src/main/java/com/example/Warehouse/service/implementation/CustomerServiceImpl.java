@@ -44,12 +44,16 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO findCustomerByName(String customerName) {
-        return null;
+        return customerRepository.findByCustomerName(customerName)
+                .map(customer -> modelMapper.map(customer, CustomerDTO.class))
+                .orElseThrow();
     }
 
     @Override
     public CustomerDTO findCustomerByEmail(String customerEmail) {
-        return null;
+        return customerRepository.findByCustomerEmail(customerEmail)
+                .map(customer -> modelMapper.map(customer, CustomerDTO.class))
+                .orElseThrow();
     }
 
     @Override
