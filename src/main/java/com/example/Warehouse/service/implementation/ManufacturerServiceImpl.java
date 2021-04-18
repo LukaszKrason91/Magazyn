@@ -49,8 +49,8 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     }
 
     @Override
-    public ManufacturerDTO findManufacturerByName(String manufacturerName) {
-        return manufacturerRepository.findManufacturerByName(manufacturerName)
+    public ManufacturerDTO findManufacturerByManufacturerName(String manufacturerName) {
+        return manufacturerRepository.findManufacturerByManufacturerName(manufacturerName)
                 .map(manufacturer -> modelMapper.map(manufacturer, ManufacturerDTO.class))
                 .orElseThrow();
     }

@@ -50,7 +50,7 @@ public class WarehouseServiceImpl implements WarehouseService {
 
     @Override
     public WarehouseDTO findWarehouseByName(String warehouseName) {
-        return warehouseRepository.findWarehouseByName(warehouseName)
+        return warehouseRepository.findWarehouseByWarehouseName(warehouseName)
                 .map(warehouse -> modelMapper.map(warehouse, WarehouseDTO.class))
                 .orElseThrow();
     }

@@ -54,8 +54,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDTO findProductByName(String productName) {
-        return productRepository.findProductByName(productName)
+    public ProductDTO findProductByProductName(String productName) {
+        return productRepository.findProductByProductName(productName)
                 .map(product -> modelMapper.map(product, ProductDTO.class))
                 .orElseThrow();
     }

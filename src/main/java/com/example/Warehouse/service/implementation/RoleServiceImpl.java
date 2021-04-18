@@ -46,7 +46,7 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public RoleDTO findRoleByName(String roleName) {
-        return roleRepository.findRoleByName(roleName)
+        return roleRepository.findRoleByRoleName(roleName)
                 .map(role -> modelMapper.map(role, RoleDTO.class))
                 .orElseThrow();
     }
