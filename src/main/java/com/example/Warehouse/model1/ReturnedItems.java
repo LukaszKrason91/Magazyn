@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table
-public class Return {
+public class ReturnedItems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int returnId;

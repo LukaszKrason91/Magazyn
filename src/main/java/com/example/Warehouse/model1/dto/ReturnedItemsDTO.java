@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReturnDTO {
+public class ReturnedItemsDTO {
     private int returnId;
     private int returnQuantity;
 
-    public ReturnDTO(int returnQuantity) {
+    public ReturnedItemsDTO(int returnQuantity) {
         this.returnQuantity = returnQuantity;
     }
 }
