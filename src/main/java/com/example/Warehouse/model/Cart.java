@@ -24,8 +24,8 @@ public class Cart {
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-    @OneToMany
+    @OneToMany(mappedBy = "cart1")
     private Set<ReturnedItems> returnedItemsSet;
-
+    @OneToMany(mappedBy = "cart")
     private Set<SingleProductForCart> singleProductForCartSet;
 }

@@ -7,10 +7,12 @@ import com.example.Warehouse.repositories.ProductRepository;
 import com.example.Warehouse.service.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
@@ -48,6 +50,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getProductEntity(int productId) {
-        return null;
+        return productRepository.findById(productId).orElseThrow(ProductNotFoundException::new);
     }
 }

@@ -7,10 +7,12 @@ import com.example.Warehouse.repositories.ManufacturerRepository;
 import com.example.Warehouse.service.ManufacturerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class ManufacturerServiceImpl implements ManufacturerService {
     @Autowired
     private ManufacturerRepository manufacturerRepository;
@@ -43,6 +45,6 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public Manufacturer getManufacturerEntity(int manufacturerId) {
-        return null;
+        return manufacturerRepository.findById(manufacturerId).orElseThrow(ManufacturerNotFoundException::new);
     }
 }

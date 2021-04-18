@@ -6,10 +6,12 @@ import com.example.Warehouse.repositories.CustomerRepository;
 import com.example.Warehouse.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
@@ -65,7 +67,7 @@ public class CustomerServiceImpl implements CustomerService {
         if (customerDTO.getCustomerAddress() != null) {
             customer.setCustomerAddress(customerDTO.getCustomerAddress());
         }
-        if (customerDTO.getCustomerEmail() != null){
+        if (customerDTO.getCustomerEmail() != null) {
             customer.setCustomerEmail(customerDTO.getCustomerEmail());
         }
         return modelMapper.map(customerRepository.save(customer), CustomerDTO.class);

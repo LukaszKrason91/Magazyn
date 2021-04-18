@@ -19,5 +19,5 @@ public class ReturnedItems {
     private int returnQuantity;
     @ManyToOne
     @JoinColumn(name = "cart_id")
-    private Cart cart;
+    private Cart cart1;
 }

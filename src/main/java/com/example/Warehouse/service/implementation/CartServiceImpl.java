@@ -7,10 +7,12 @@ import com.example.Warehouse.repositories.CartRepository;
 import com.example.Warehouse.service.CartService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class CartServiceImpl implements CartService {
     @Autowired
     private CartRepository cartRepository;
@@ -43,6 +45,6 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Cart getCartEntity(int cartId) {
-        return null;
+        return cartRepository.findById(cartId).orElseThrow(CartNotFoundException::new);
     }
 }

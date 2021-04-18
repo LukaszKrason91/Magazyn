@@ -29,6 +29,6 @@ public class Users {
     @Column
     @NotNull
     private String userPassword;
-    @OneToMany (mappedBy ="users2" )
+    @OneToMany (mappedBy ="users" )
     private Set<Role> roleSet;
 }

@@ -27,6 +27,6 @@ public class WarehouseHasProduct {
     @ManyToOne
     @JoinColumn (name = "warehouse_id")
     private Warehouse warehouses;
-    @OneToMany (mappedBy = "warehouseHasProduct1")
+    @OneToMany (mappedBy = "warehouseHasProduct")
     private Set<SingleProductForCart> singleProductForCartSet;
 }
