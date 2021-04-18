@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/customers")
-public class ConsumerController {
+public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
@@ -24,6 +24,10 @@ public class ConsumerController {
     @GetMapping("/{customerId}")
     public CustomerDTO findCustomerById(@PathVariable int customerId){
         return customerService.findCustomerById(customerId);
+    }
+    @GetMapping("/{customerName}")
+    public CustomerDTO findCustomerByName(@PathVariable String customerName){
+        return customerService.findCustomerByName(customerName);
     }
 
     @PutMapping
