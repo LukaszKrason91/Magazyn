@@ -21,5 +21,5 @@ public interface UserService {
 
     UsersDTO findUserByFirstName(String userFirstName);
 
-    UsersDTO findUserByLasrName(String userLastName);
+    UsersDTO findUserByLastName(String userLastName);
 }

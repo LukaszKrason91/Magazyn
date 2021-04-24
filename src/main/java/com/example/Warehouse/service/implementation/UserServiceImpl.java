@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UsersDTO findUserByLasrName(String userLastName) {
+    public UsersDTO findUserByLastName(String userLastName) {
         return usersRepository.findUserByUserLastName(userLastName)
                 .map(users -> modelMapper.map(users, UsersDTO.class))
                 .orElseThrow();
