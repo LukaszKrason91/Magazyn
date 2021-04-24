@@ -1,15 +1,21 @@
 package com.example.Warehouse.services.implementations;
 
+import com.example.Warehouse.model1.Role;
 import com.example.Warehouse.model1.Users;
 import com.example.Warehouse.model1.dto.UsersDTO;
+import com.example.Warehouse.repositories.RoleRepository;
 import com.example.Warehouse.repositories.UsersRepository;
 import com.example.Warehouse.services.UsersService;
 import com.example.Warehouse.exceptions.UserNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,6 +24,10 @@ public class UsersServiceImpl implements UsersService {
     private UsersRepository usersRepository;
     @Autowired
     private ModelMapper modelMapper;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
+    private RoleRepository roleRepository;
 
     @Override
     public List<UsersDTO> findAllUsers() {
@@ -28,7 +38,12 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public UsersDTO create(UsersDTO usersDTO) {
-        usersRepository.save(modelMapper.map(usersDTO, Users.class));
+       usersDTO.setUserPassword(passwordEncoder.encode(usersDTO.getUserPassword()));
+       Set<Role> roleSet=new HashSet<>();
+       roleSet.add(roleRepository.findByName("admin"));
+       usersDTO.setRoleSet(roleSet);
+       usersRepository.save((Users.class).cast(usersDTO));
+
         return usersDTO;
     }
 

@@ -8,7 +8,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/carts")
+@RequestMapping("/carts")
 public class CartController {
     @Autowired
     private CartService cartService;

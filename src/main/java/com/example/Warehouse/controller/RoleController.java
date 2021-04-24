@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/role")
+@RequestMapping("/role")
 public class RoleController {
     @Autowired
     private RoleService roleService;

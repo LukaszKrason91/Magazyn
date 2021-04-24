@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/warehouses")
+@RequestMapping("/warehouses")
 public class WarehouseController {
     @Autowired
     private WarehouseService warehouseService;

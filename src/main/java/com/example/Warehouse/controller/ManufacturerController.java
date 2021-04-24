@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/manufacturer")
+@RequestMapping("/manufacturer")
 public class ManufacturerController {
     @Autowired
     private ManufacturerService manufacturerService;
