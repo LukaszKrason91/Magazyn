@@ -5,6 +5,7 @@ import com.example.Warehouse.model.Users;
 import com.example.Warehouse.model.dto.UsersDTO;
 import com.example.Warehouse.repositories.UsersRepository;
 import com.example.Warehouse.service.UserService;
+import org.apache.catalina.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UsersDTO update(int userId, UsersDTO usersDTO) {
-        return null;
+        Users users = getUserEntity(userId);
+        if(usersDTO.getUserFirstName()!= null){
+            users.setUserFirstName(usersDTO.getUserFirstName());
+        }
+        if(usersDTO.getUserLastName()!=null){
+            users.setUserLastName(usersDTO.getUserLastName());
+        }
+        if (usersDTO.getLogin()!=null){
+            users.setLogin(usersDTO.getLogin());
+        }
+
+        return modelMapper.map(usersRepository.save(users),UsersDTO.class);
     }
 
     @Override
