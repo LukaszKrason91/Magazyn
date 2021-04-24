@@ -45,7 +45,15 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO updateProduct(int productId, ProductDTO productDTO) {
-        return null;
+        Product product = getProductEntity(productId);
+        if(productDTO.getProductName()!=null){
+            product.setProductName(productDTO.getProductName());
+        }
+        if(productDTO.getProductPrice()!= 0.0){
+            product.setProductPrice(productDTO.getProductPrice());
+        }
+
+        return modelMapper.map(productRepository.save(product), ProductDTO.class);
     }
 
     @Override
