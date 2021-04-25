@@ -8,13 +8,16 @@ import com.example.Warehouse.service.UserService;
 import org.apache.catalina.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
     private UsersRepository usersRepository;
     @Autowired
@@ -77,5 +80,10 @@ public class UserServiceImpl implements UserService {
         return usersRepository.findUserByUserLastName(userLastName)
                 .map(users -> modelMapper.map(users, UsersDTO.class))
                 .orElseThrow();
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        return (UserDetails) usersRepository.findUserByLogin(s).orElseThrow(UserNotFoundException::new);
     }
 }
