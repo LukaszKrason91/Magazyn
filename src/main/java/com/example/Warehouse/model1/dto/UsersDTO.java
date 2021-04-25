@@ -1,9 +1,11 @@
 package com.example.Warehouse.model1.dto;
 
 import com.example.Warehouse.model1.Role;
+import com.example.Warehouse.model1.Users;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -20,12 +22,6 @@ public class UsersDTO {
     private String login;
     private Set<Role> roleSet;
 
-    public UsersDTO(String userName, String userLastName, String userPassword, String login) {
-        this.userFirstName = userName;
-        this.userLastName = userLastName;
-        this.userPassword = userPassword;
-        this.login=login;
-    }
 
     public UsersDTO(String userFirstName, String userLastName, String userPassword, String login, Set<Role> roleSet) {
         this.userFirstName = userFirstName;
@@ -37,4 +33,5 @@ public class UsersDTO {
 
     public UsersDTO(String login, String userPassword, Set<GrantedAuthority> grantedAuthorities) {
     }
+
 }

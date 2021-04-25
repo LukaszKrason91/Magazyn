@@ -8,7 +8,7 @@ import java.util.List;
 public interface UsersService {
     List<UsersDTO> findAllUsers();
 
-    UsersDTO create(UsersDTO usersDTO);
+    Users create(UsersDTO usersDTO);
 
     UsersDTO update(int userId, UsersDTO usersDTO);
 

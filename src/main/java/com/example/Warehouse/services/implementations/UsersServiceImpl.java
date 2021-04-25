@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -37,14 +36,14 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public UsersDTO create(UsersDTO usersDTO) {
+    public Users create(UsersDTO usersDTO) {
        usersDTO.setUserPassword(passwordEncoder.encode(usersDTO.getUserPassword()));
        Set<Role> roleSet=new HashSet<>();
        roleSet.add(roleRepository.findByName("admin"));
        usersDTO.setRoleSet(roleSet);
-       usersRepository.save((Users.class).cast(usersDTO));
+       usersRepository.save((Users.class).cast(usersRepository));
+       return null;
 
-        return usersDTO;
     }
 
     @Override
@@ -82,11 +81,11 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public UsersDTO findByLogin(String login) {
-        return usersRepository.findByLogin(login).map(users -> modelMapper.map(users,UsersDTO.class)).orElseThrow();
+        return usersRepository.findByLogin(login);
     }
 
     @Override
     public UsersDTO findByUserLastName(String userLastName) {
-        return usersRepository.findByUserLastName(userLastName).map(users -> modelMapper.map(users,UsersDTO.class)).orElseThrow();
+        return usersRepository.findByUserLastName(userLastName);
     }
 }

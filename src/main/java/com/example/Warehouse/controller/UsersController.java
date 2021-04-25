@@ -1,9 +1,12 @@
 package com.example.Warehouse.controller;
 
+import com.example.Warehouse.model1.Users;
 import com.example.Warehouse.model1.dto.UsersDTO;
 import com.example.Warehouse.services.UsersService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -12,6 +15,8 @@ import java.util.List;
 public class UsersController {
     @Autowired
     private UsersService usersService;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @GetMapping("/users")
     @ResponseStatus
@@ -31,7 +36,7 @@ public class UsersController {
     public UsersDTO findByUserLastName(@PathVariable String userLastName){return usersService.findByUserLastName(userLastName);}
 
     @PutMapping
-    public UsersDTO create(@Valid @RequestBody UsersDTO usersDTO) {
+    public Users create(@Valid @RequestBody UsersDTO usersDTO) {
         return usersService.create(usersDTO);
     }
 
