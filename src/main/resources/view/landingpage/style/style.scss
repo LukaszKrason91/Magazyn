@@ -1,0 +1,72 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css");
+@import url("@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap');");
+@import url("https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+
+$blue: #0f77ff;
+$blue-new: #0c3a77;
+$primary-font: "Roboto Mono", monospace;
+
+body {
+    font-family: $primary-font;
+}
+
+.navbar-brand {
+    margin-right: 15px;
+}
+
+.logo-brand {
+    background: $blue;
+    padding: 14px 10px 5px 10px;
+    border-radius: 0 0 7px 7px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.navbar-item:hover {
+    background: transparent;
+}
+
+.is-blue {
+    color: $blue !important;
+}
+
+.is-hero-image {
+    background: linear-gradient(165deg, #4d7c8e 35%, rgba(164, 223, 154, 0.85) 131%);
+}
+
+.tag:not(body).is-light {
+    background-color: #f5f5f5;
+    color: #ababab;
+}
+
+.hero-footer {
+    background: #ffffff;
+    padding: 15px;
+    z-index: 1;
+}
+
+.tags-search {
+    margin: 10px 0;
+}
+
+.tabs-subsection {
+    a {
+        color: #a1a9b3 !important;
+    }
+    i {
+        padding-right: 5px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero-message {
+        text-align: justify;
+        text-justify: inter-word;
+        margin-bottom: 5rem;
+    }
+}

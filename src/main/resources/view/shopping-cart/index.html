@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koszyk</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/js/app.js"></script>
+</head>
+<body>
+    <h1>Koszyk</h1>
+
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Zdjęcie</label>
+    <label class="product-details">Produkt</label>
+    <label class="product-price">Cena</label>
+    <label class="product-quantity">Ilość</label>
+    <label class="product-removal">Usuń</label>
+    <label class="product-line-price">Suma</label>
+  </div>
+
+  <div class="product">
+    <div class="product-image">
+      <img src="https://e.allegroimg.com/s1024/0c0d54/6c534872494bbad4b9856f77564e">
+    </div>
+    <div class="product-details">
+      <div class="product-title">Pustak SOLBET 24x24x59</div>
+      <p class="product-description">Bloczki przeznaczone do wznoszenia ścian warstwowych i działowych. Dostępne są w różnych szerokościach i klasach gęstości. Różnią się także profilowaniem powierzchni bocznych, co wpływa na technikę wykonania ścian.</p>
+    </div>
+    <div class="product-price">12.99</div>
+    <div class="product-quantity">
+      <input type="number" value="2" min="1">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product">
+        Usuń
+      </button>
+    </div>
+    <div class="product-line-price">25.98</div>
+  </div>
+
+  <div class="product">
+    <div class="product-image">
+      <img src="https://www.bricoman.pl/pub/media/catalog/product/3/f/9/c/zaprawa_murarska_atlas_kg_156975_picture.jpg">
+    </div>
+    <div class="product-details">
+      <div class="product-title">Zaprawa murarska Atlas 25 kg</div>
+      <p class="product-description">Waga transport (kg) : 25
+        Długość transport (cm) : 35
+        Wysokość transport (cm) : 15
+        Szerokość transport (cm) : 55</p>
+    </div>
+    <div class="product-price">45.99</div>
+    <div class="product-quantity">
+      <input type="number" value="1" min="1">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product">
+        Usuń
+      </button>
+    </div>
+    <div class="product-line-price">45.99</div>
+  </div>
+
+  <div class="totals">
+    <div class="totals-item">
+      <label>Suma częściowa</label>
+      <div class="totals-value" id="cart-subtotal">71.97</div>
+    </div>
+    <div class="totals-item">
+      <label>Podatek (69%)</label>
+      <div class="totals-value" id="cart-tax">3.60</div>
+    </div>
+    <div class="totals-item">
+      <label>Dostawa</label>
+      <div class="totals-value" id="cart-shipping">15.00</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Suma całkowita</label>
+      <div class="totals-value" id="cart-total">90.57</div>
+    </div>
+  </div>
+      
+      <button class="checkout">Do kasy</button>
+
+</div>
+</body>
+</html>
