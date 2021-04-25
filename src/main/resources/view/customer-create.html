@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Magazyn - Nowy klient</title>
+    <link rel="stylesheet" href="css/bulma.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://kit.fontawesome.com/1081b136fd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h2 class="title">Nowy użytkownik</h2>
+            <hr class="underline">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Typ użytkownika</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="customer-type" checked>
+                                Firma
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="customer-type">
+                                Klient indywidualny
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Osoba odpowiedzialna</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text" placeholder="Imię">
+                        </div>
+                        <div class="control is-expanded">
+                            <input class="input" type="text" placeholder="Nazwisko">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Nazwa firmy</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label username">Nazwa użytkownika</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Adres email</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control has-icons-left has-icons-right is-expanded">
+                            <input class="input" type="email" placeholder="Email">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <div class="label">Numer telefonu</div>
+                </div>
+                <div class="field-body">
+                    <div class="field is-expanded">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <a class="button is-static">
+                                    +48
+                                </a>
+                            </p>
+                            <p class="control is-expanded">
+                                <input class="input" type="tel" placeholder="Numer telefonu">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="field is-expanded">
+                        <div class="field has-addons">
+                            <p class="control is-expanded">
+                                <input class="input" type="tel" placeholder="Numer telefonu komórkowego">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Strona internetowa</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text" placeholder="Adres strony WWW">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Waluta</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>PLN - Polski złoty</option>
+                                    <option>ZMK - Kwacha prezydencka</option>
+                                    <option>XAU - Złoto</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Opcje płatności</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>Rachunek bankowy</option>
+                                    <option>Odroczenie 30</option>
+                                    <option>Odroczenie 90</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="underline">
+            <h4 class="subtitle">Dane adresowe</h4>
+
+            <div class="field is-horizontal is-grouped">
+                <p class="control has-icons-left is-expanded">
+                    <span class="select is-fullwidth">
+                        <select>
+                            <option selected>Polska</option>
+                            <option>Mongolia</option>
+                            <option>Zamunda</option>
+                        </select>
+                    </span>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-globe"></i>
+                    </span>
+                </p>
+                <div class="control is-expanded">
+                    <input class="input" type="text" placeholder="Województwo/Powiat">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" placeholder="Adres">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" placeholder="Adres cd.">
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="control is-expanded">
+                    <input class="input" type="text" placeholder="Miejscowość">
+                </div>
+                <div class="control is-expanded">
+                    <input class="input" type="text" placeholder="Kod pocztowy">
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="control is-expanded">
+                    <input class="input" type="text" placeholder="Telefon">
+                </div>
+                <div class="control is-expanded">
+                    <input class="input" type="text" placeholder="Fax">
+                </div>
+            </div>
+            
+            <hr class="underline">
+            <div class="buttons">
+                <button class="button is-success">Zapisz zmiany</button>
+                <button class="button is-danger">Wróć</button>
+            </div>
+
+        </form>
+    </div>
+</body></html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Magazyn - Formularz rejestracji</title>
+    <link rel="stylesheet" href="css/bulma.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://kit.fontawesome.com/1081b136fd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h2 class="title">Zarejestruj firmę</h2>
+            <hr class="underline">
+            <div class="field">
+                <label class="label">Nazwa firmy</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Wpisz nazwę firmy">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Rodzaj działalności</label>
+                <div class="control is-expanded">
+                    <div class="select is-fullwidth">
+                        <select name="typ-dzialalnosci">
+                            <option>Handel</option>
+                            <option>Usługi</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <p class="control has-icons-left is-expanded">
+                    <span class="select is-fullwidth">
+                        <select>
+                            <option selected>Polska</option>
+                            <option>Mongolia</option>
+                            <option>Zamunda</option>
+                        </select>
+                    </span>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-globe"></i>
+                    </span>
+                </p>
+                <div class="control is-expanded">
+                    <input class="input" type="text" placeholder="Województwo/Powiat">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" placeholder="Adres">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" placeholder="Adres cd.">
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="control is-expanded">
+                    <input class="input" type="text" placeholder="Miejscowość">
+                </div>
+                <div class="control is-expanded">
+                    <input class="input" type="text" placeholder="Kod pocztowy">
+                </div>
+            </div>
+
+           <hr class="underline">
+            <h4 class="subtitle">Ustawienia regionalne</h4>
+
+            <div class="field is-horizontal is-grouped">
+                <p class="control is-expanded">
+                    <label class="label">Waluta</label>
+                    <span class="select is-fullwidth">
+                        <select>
+                            <option selected>PLN - Polski złoty</option>
+                            <option>ZMK - Kwacha prezydencka</option>
+                            <option>XAU - Złoto</option>
+                        </select>
+                    </span>
+                </p>
+                <p class="control is-expanded">
+                    <label class="label">Język</label>
+                    <span class="select is-fullwidth">
+                        <select>
+                            <option selected>polski</option>
+                            <option>suahili</option>
+                            <option>elficki</option>
+                        </select>
+                    </span>
+                </p>
+            </div>
+
+            <div class="field">
+                <label class="label">Strefa czasowa</label>
+                <div class="control is-expanded">
+                    <div class="select is-fullwidth">
+                        <select name="strefa-czasowa">
+                            <option>(GMT 1:00) Central European Summer Time (Europe/Warsaw)</option>
+                            <option>Czas marsjański</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <p class="control is-expanded">
+                    <label class="label">Data rozpoczęcia</label>
+                    <input id="today" class="input" type="date">
+                </p>
+                <p class="control is-expanded">
+                    <label class="label">Rok fiskalny</label>
+                    <span class="select is-fullwidth">
+                        <select>
+                            <option selected>Styczeń - Grudzień</option>
+                            <option>Luty - Styczeń</option>
+                            <option>Marzec - Luty</option>
+                        </select>
+                    </span>
+                </p>
+            </div>
+
+            <p class="form-text">
+                <strong>Zoba to:</strong> Możesz zmienić swoje Ustawienia później.
+            </p>
+            <hr>
+
+            <div class="buttons">
+                <button class="button is-info" type="submit">Zapisz zmiany</button>
+                <button class="button is-danger">Lepiej nie</button>
+            </div>
+
+        </form>
+        <script>
+            document.querySelector("#today").valueAsDate = new Date();
+        </script>
+    </div>
+</body></html>
