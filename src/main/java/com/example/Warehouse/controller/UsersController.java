@@ -5,6 +5,7 @@ import com.example.Warehouse.model1.dto.UsersDTO;
 import com.example.Warehouse.services.UsersService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -36,8 +37,9 @@ public class UsersController {
     public UsersDTO findByUserLastName(@PathVariable String userLastName){return usersService.findByUserLastName(userLastName);}
 
     @PutMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Users create(@Valid @RequestBody UsersDTO usersDTO) {
-        return usersService.create(usersDTO);
+      return usersService.create(usersDTO);
     }
 
     @PutMapping("/{userId}")

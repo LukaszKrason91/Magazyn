@@ -41,7 +41,7 @@ public class UsersServiceImpl implements UsersService {
        Set<Role> roleSet=new HashSet<>();
        roleSet.add(roleRepository.findByName("admin"));
        usersDTO.setRoleSet(roleSet);
-       usersRepository.save((Users.class).cast(usersRepository));
+       usersRepository.save(modelMapper.map(usersDTO,Users.class));
        return null;
 
     }
