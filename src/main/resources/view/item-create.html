@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Magazyn - Nowy towar/usługa</title>
+    <link rel="stylesheet" href="css/bulma.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://kit.fontawesome.com/1081b136fd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h2 class="title">Nowy towar/usługa</h2>
+            <hr class="underline">
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Typ</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="customer-type" checked>
+                                Towar
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="customer-type">
+                                Usługa
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label username">Nazwa*</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">SKU</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label username">Jednostki*</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>szt</option>
+                                    <option>kg</option>
+                                    <option>cm</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label"></label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                Towar zwrotny
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="underline">
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label">Wymiary (cm)</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input" type="text">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <label class="label">Waga (kg)</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input" type="text">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label">Producent</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>Samoróbka Sp. z o.o.</option>
+                                    <option>Wihajster Ltd</option>
+                                    <option>Usterka PUH</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <label class="label">Marka</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>Menel</option>
+                                    <option>Zapierdol</option>
+                                    <option>Obibos</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label">UPC</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <label class="label">MPN</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label">EAN</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <label class="label">ISBN</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="underline">
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label"></label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                Informacje o sprzedaży
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <label class="label"></label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                Informacje o zakupie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <div class="label username">Cena sprzedaży*</div>
+                </div>
+                <div class="field-body">
+                    <div class="field is-expanded">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <a class="button is-static">
+                                    PLN
+                                </a>
+                            </p>
+                            <p class="control is-expanded">
+                                <input class="input" type="number">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <div class="label username">Cena zakupu*</div>
+                </div>
+                <div class="field-body">
+                    <div class="field is-expanded">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <a class="button is-static">
+                                    PLN
+                                </a>
+                            </p>
+                            <p class="control is-expanded">
+                                <input class="input" type="number">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label">Na konto</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>Sprzedaż</option>
+                                    <option>Opóźniona spłata</option>
+                                    <option>Opłaty pocztowe</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <label class="label">Na konto</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>Zakupy</option>
+                                    <option>Wynajem</option>
+                                    <option>Naprawa i utrzymanie</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label">Opis kategorii</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <textarea class="textarea" placeholder="Wprowadź opis"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <label class="label">Opis kategorii</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <div class="control is-expanded">
+                            <textarea class="textarea" placeholder="Wprowadź opis"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal is-grouped">
+                <div class="field-label is-normal">
+                    <label class="label">Podatek</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>Wybierz podatek</option>
+                                    <option>15%</option>
+                                    <option>7%</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="field-label is-normal">
+                    <label class="label">Podatek</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-horizontal is-grouped">
+                        <p class="control is-expanded">
+                            <span class="select is-fullwidth">
+                                <select>
+                                    <option selected>Wybierz podatek</option>
+                                    <option>15%</option>
+                                    <option>7%</option>
+                                </select>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="underline">
+            <div class="buttons">
+                <button class="button is-success">Zapisz zmiany</button>
+                <button class="button is-danger">Wróć</button>
+            </div>
+
+
+        </form>
+    </div>
+</body></html>
